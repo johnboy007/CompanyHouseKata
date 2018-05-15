@@ -1,0 +1,83 @@
+﻿@model IEnumerable<CompanyHouseApp.Models.CompanyHouse>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Company House Search</h2>
+
+<p>
+    @using (Html.BeginForm("Index", "CompanyHouse", FormMethod.Get))
+    {
+        @Html.TextBox("name")<input type="submit" value="Search"/>
+    }
+</p>
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>Company Name</th>
+        <th>Company Number</th>
+        <th>PoBox</th>
+        <th>Address 1</th>
+        <th>Address 2</th>
+        <th>Town</th>
+        <th>County</th>
+        <th>Country</th>
+        <th>PostCode</th>
+        <th>Category</th>
+        <th>Status</th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    @if (!Model.Any())
+    {
+        <tr>
+            <td colspan="3" style="color: red">No Result</td>
+        </tr>
+    }
+    else
+    {
+        foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.companyName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.companyNumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.poBox)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.addressOne)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.addressTwo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.town)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.county)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.country)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.postCode)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.category)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.status)
+                </td>
+            </tr>
+        }
+    }
+
+    </tbody>
+
+</table>

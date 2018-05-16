@@ -20,10 +20,9 @@
         <th>PoBox</th>
         <th>Address 1</th>
         <th>Address 2</th>
-        <th>Town</th>
-        <th>County</th>
+        <th>Locality</th>
+        <th>Region</th>
         <th>Country</th>
-        <th>PostCode</th>
         <th>Category</th>
         <th>Status</th>
         <th></th>
@@ -42,37 +41,34 @@
         {
             <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => item.companyName)
+                    @Html.DisplayFor(modelItem => item.title)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.companyNumber)
+                    @Html.DisplayFor(modelItem => item.company_number)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.poBox)
+                    @Html.DisplayFor(modelItem => item.address.postal_code)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.addressOne)
+                    @Html.DisplayFor(modelItem => item.address.address_line_1)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.addressTwo)
+                    @Html.DisplayFor(modelItem => item.address.address_line_2)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.town)
+                    @Html.DisplayFor(modelItem => item.address.locality)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.county)
+                    @Html.DisplayFor(modelItem => item.address.region)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.country)
+                    @Html.DisplayFor(modelItem => item.address.country)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.postCode)
+                    @Html.DisplayFor(modelItem => item.company_type)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.category)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.status)
+                    @Html.DisplayFor(modelItem => item.company_status)
                 </td>
             </tr>
         }
